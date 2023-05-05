@@ -1,0 +1,18 @@
+//menu wrapper
+.menu-list {
+    width: 224px;
+}
+//menu item
+.menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 0 !important;
+    background-color: white;
+    text-align: inherit;
+    width: 100%;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.068);
+    }
+}
