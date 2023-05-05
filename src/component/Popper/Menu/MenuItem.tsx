@@ -7,10 +7,12 @@ const cx = classNames.bind(styles)
 
 interface IData {
     data: IMenuItem
+    onClick?: any
 }
 
-function MenuItem({ data }: IData) {
-    return (<Button className={cx("menu-item")} leftIcon={data.icon} to={data.to}>{data.title}</Button>);
+function MenuItem({ data, onClick }: IData) {
+
+    return (<Button className={cx("menu-item", { separate: data.separate })} leftIcon={data.icon} to={data.to} onClick={onClick}>{data.title}</Button>);
 }
 
 export default MenuItem;

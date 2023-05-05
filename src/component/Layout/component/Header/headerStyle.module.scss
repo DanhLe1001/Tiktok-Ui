@@ -100,6 +100,7 @@
 }
 
 .more-bnt {
+    cursor: pointer;
     display: inline-flex;
     vertical-align: middle;
     margin-left: 18px;
@@ -107,4 +108,22 @@
 
 .menu-items {
     width: 224px;
+}
+
+.action {
+    display: flex;
+    justify-content: center;
+}
+//user-login
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 18px;
+}
+.send,
+.notification {
+    border: none;
+    margin-left: 18px;
 }
