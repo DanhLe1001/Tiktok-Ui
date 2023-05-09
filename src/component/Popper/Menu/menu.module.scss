@@ -37,3 +37,7 @@
 .separate {
     border-top: 1px solid rgba(0, 0, 0, 0.204);
 }
+.menu-scrollable {
+    overflow-y: auto;
+    width: 100%;
+}

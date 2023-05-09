@@ -39,9 +39,11 @@ function Menu({ children, items, onChange }: IMenu) {
 
     return (
         <Tippy
+            //onHide set value again after it hide
             onHide={() => setHistory((prev => prev.slice(0, 1)))}
-            delay={[0, 600]}
+            delay={[0, 500]}
             offset={[12, 8]}
+            hideOnClick={false}
             interactive
             placement="bottom-end"
             render={(att) => (
@@ -50,7 +52,7 @@ function Menu({ children, items, onChange }: IMenu) {
                         {history.length > 1 && <HeaderMenu title='Language' onBack={() => (
                             setHistory(prev => prev.slice(0, prev.length - 1))
                         )}></HeaderMenu>}
-                        {renderItems()}
+                        <div className={cx("menu-scrollable")}>{renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}
