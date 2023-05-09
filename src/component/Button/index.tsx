@@ -18,10 +18,12 @@ interface IButton {
     lager?: boolean;
     disable?: boolean;
     className?: any;
+    leftIcon?: any;
+    rightIcon?: any;
     onClick?: any;
 }
 
-function Button({ children, to, href, primary, rounded, outline, text, onClick, target, small, lager, className, disable }: IButton) {
+function Button({ children, to, href, primary, rounded, outline, text, onClick, target, small, lager, className, leftIcon, rightIcon, disable }: IButton) {
 
     let Comp: any = "button";
     const props: any = {
@@ -47,11 +49,14 @@ function Button({ children, to, href, primary, rounded, outline, text, onClick, 
     // }
 
     const classes = cx("wrapper", {
-        [className]: className, primary, outline, rounded, text, small, lager
+        [className]: className, primary, outline, rounded, text, small, lager, leftIcon, rightIcon
     });
     return (
         <Comp className={classes}  {...props} target={target} >
-            <span>{children}</span>
+            {leftIcon && <span className={cx("icon")}>{leftIcon}</span>}
+            <span className={cx("title")}>{children}</span>
+            {rightIcon && <span className={cx("icon")}>{rightIcon}</span>}
+
         </Comp>
     );
 }

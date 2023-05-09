@@ -1,0 +1,39 @@
+//menu wrapper
+.menu-list {
+    width: 224px;
+}
+//menu item
+.menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 0 !important;
+    background-color: white;
+    text-align: inherit;
+    width: 100%;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.068);
+    }
+}
+.header {
+    margin-top: -8px;
+    position: relative;
+    height: 50px;
+}
+.back-bnt {
+    height: 100%;
+    width: 50px;
+    border: transparent;
+}
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 250%;
+    transform: translate(-50%, -50%);
+    width: 130px;
+}
+
+.separate {
+    border-top: 1px solid rgba(0, 0, 0, 0.204);
+}
