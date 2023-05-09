@@ -4,27 +4,31 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import { Wrapper as PopperWrapper } from "../../../Popper";
 import classNames from "classnames/bind";
 import styles from "./searchInpStyle.module.scss"
+import { useDebounce } from "../../../../hooks";
+
 
 const cx = classNames.bind(styles)
 
 function SearchInp() {
-    const [searchResult, setSearchResult] = useState([])
-    const [searchValue, setSearchValue] = useState<string>("")
-    const [showResult, setShowResult] = useState<boolean>(true)
+    const [searchResult, setSearchResult] = useState([]);
+    const [searchValue, setSearchValue] = useState<string>("");
+    const [showResult, setShowResult] = useState<boolean>(true);
+
+    const debounce = useDebounce(searchValue, 600)
 
     useEffect(() => {
         //trim() Used to remove all leading and trailing spaces.
-        if (!searchValue.trim()) {
+        if (!debounce.trim()) {
             setSearchResult([]);
             return;
         }
         //encodeURIComponent convert ký tự đặc biệt: = ? & trên API
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounce)}&type=less`)
             .then(response => response.json())
             .then(res => setSearchResult(res.data));
 
 
-    }, [searchValue])
+    }, [debounce])
 
     const inputRef = useRef<HTMLInputElement>(null);
     const handleClear = () => {
