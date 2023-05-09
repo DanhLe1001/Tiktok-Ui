@@ -1,3 +1,7 @@
+// .search-result {
+//     overflow-y: overlay;
+//     box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 12px;
+// }
 .search,
 .search-result {
     width: 361px;
@@ -78,4 +82,8 @@
     &:hover {
         background: rgba(22, 24, 35, 0.03);
     }
+}
+.search-result-scroll {
+    overflow-y: auto;
+    width: 100%;
 }

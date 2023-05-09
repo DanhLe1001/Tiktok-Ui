@@ -8,6 +8,7 @@ import Button from "../../../Button";
 import images from "../../../../assets/images";
 import Menu from "../../../Popper/Menu";
 import SearchInp from "../SearchInp";
+import routerConfig from "../../../../config/routers";
 const cx = classNames.bind(styles)
 
 export interface ILanguage {
@@ -48,6 +49,66 @@ function Header() {
         children: {
             title: 'language',
             data: [
+                {
+                    code: "en",
+                    title: "English",
+                },
+                {
+                    code: "vn",
+                    title: "Viet Nam",
+                },
+                {
+                    code: "en",
+                    title: "English",
+                },
+                {
+                    code: "vn",
+                    title: "Viet Nam",
+                },
+                {
+                    code: "en",
+                    title: "English",
+                },
+                {
+                    code: "vn",
+                    title: "Viet Nam",
+                },
+                {
+                    code: "en",
+                    title: "English",
+                },
+                {
+                    code: "vn",
+                    title: "Viet Nam",
+                },
+                {
+                    code: "en",
+                    title: "English",
+                },
+                {
+                    code: "vn",
+                    title: "Viet Nam",
+                },
+                {
+                    code: "en",
+                    title: "English",
+                },
+                {
+                    code: "vn",
+                    title: "Viet Nam",
+                },
+                {
+                    code: "vn",
+                    title: "Viet Nam",
+                },
+                {
+                    code: "en",
+                    title: "English",
+                },
+                {
+                    code: "vn",
+                    title: "Viet Nam",
+                },
                 {
                     code: "en",
                     title: "English",
@@ -104,7 +165,7 @@ function Header() {
         <div className={cx('warper')}>
             <div className={cx('inner')}>
                 <div className={cx("logo")}>
-                    <img src={images.logo} alt="logo tiktok" />
+                    <Link to={routerConfig.home}> <img src={images.logo} alt="logo tiktok" /></Link>
                 </div>
                 <SearchInp />
 
