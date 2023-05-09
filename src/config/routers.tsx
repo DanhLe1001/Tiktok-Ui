@@ -1,4 +1,4 @@
-const routerConfig = {
+const router = {
     home: "/",
     following: "/following",
     profile: "/profile",
@@ -6,4 +6,4 @@ const routerConfig = {
     search: "/search",
 
 }
-export default routerConfig;
+export default router;

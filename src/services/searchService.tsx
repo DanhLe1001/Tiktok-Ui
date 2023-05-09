@@ -1,8 +1,8 @@
-import request from "../utils/request";
+import httpRequest from "../utils/httpRequest";
 
 export const searchService = async (q: any, type: string = "less") => {
     try {
-        const res: any = await request.get("users/search", {
+        const res: any = await httpRequest.get("users/search", {
             params: {
                 q,
                 type
