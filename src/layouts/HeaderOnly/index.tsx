@@ -1,5 +1,5 @@
 import Header from "../component/Header";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 interface HeaderOnlyProps {
     children: ReactNode;
 }

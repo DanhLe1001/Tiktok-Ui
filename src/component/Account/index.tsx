@@ -1,13 +1,13 @@
 import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
 import styles from "./account.module.scss"
-import routerConfig from "../../config/routers";
+import config from "../../config";
 
 const cx = classNames.bind(styles)
 
 function Account({ data }: any) {
     return (
-        <Link to={`${routerConfig.profile}/@${data.nickname}`} className={cx("wrapper")}>
+        <Link to={`${config.router.profile}/@${data.nickname}`} className={cx("wrapper")}>
             <img className={cx("avatar")} src={data.avatar} alt="avt" />
             <div className={cx("infor")}>
                 <p className={cx("name")}>

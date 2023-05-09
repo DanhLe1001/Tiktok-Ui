@@ -1,7 +1,7 @@
-import Button from "../../Button";
-import { IMenuItem } from "../../Layout/component/Header";
 import classNames from "classnames/bind";
+import Button from "../../Button";
 import styles from "./menu.module.scss"
+import { IMenuItem } from "../../../layouts/component/Header";
 
 const cx = classNames.bind(styles)
 

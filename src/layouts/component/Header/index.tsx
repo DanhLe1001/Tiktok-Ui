@@ -4,11 +4,12 @@ import 'tippy.js/dist/tippy.css';
 import styles from "./headerStyle.module.scss"
 import { Link } from "react-router-dom";
 
-import Button from "../../../Button";
-import images from "../../../../assets/images";
-import Menu from "../../../Popper/Menu";
+import config from "../../../config";
 import SearchInp from "../SearchInp";
-import routerConfig from "../../../../config/routers";
+import images from "../../../assets/images";
+import Button from "../../../component/Button";
+import Menu from "../../../component/Popper/Menu";
+
 const cx = classNames.bind(styles)
 
 export interface ILanguage {
@@ -165,7 +166,7 @@ function Header() {
         <div className={cx('warper')}>
             <div className={cx('inner')}>
                 <div className={cx("logo")}>
-                    <Link to={routerConfig.home}> <img src={images.logo} alt="logo tiktok" /></Link>
+                    <Link to={config.router.home}> <img src={images.logo} alt="logo tiktok" /></Link>
                 </div>
                 <SearchInp />
 

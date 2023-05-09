@@ -1,7 +1,7 @@
 //layout
-import { HeaderOnly } from "../component/Layout"
+import { HeaderOnly } from "../layouts";
 //routerConfig
-import routerConfig from "../config/routers"
+import config from "../config"
 
 import Home from '../page/Home';
 import Following from '../page/Following';
@@ -16,11 +16,11 @@ interface IPublicRouter {
 }
 
 const publicRouter: IPublicRouter[] = [
-    { path: routerConfig.home, component: Home },
-    { path: routerConfig.following, component: Following },
-    { path: `${routerConfig.profile}/:nickname`, component: Information },
-    { path: routerConfig.upload, component: Upload, layout: HeaderOnly },
-    { path: routerConfig.search, component: Search, layout: null },
+    { path: config.router.home, component: Home },
+    { path: config.router.following, component: Following },
+    { path: `${config.router.profile}/:nickname`, component: Information },
+    { path: config.router.upload, component: Upload, layout: HeaderOnly },
+    { path: config.router.search, component: Search, layout: null },
 ]
 const privativeRouter = [{}];
 

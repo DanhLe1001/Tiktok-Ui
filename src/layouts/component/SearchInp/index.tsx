@@ -2,11 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import classNames from "classnames/bind";
 import HeadlessTippy from '@tippyjs/react/headless';
 
-import Account from "../../../Account";
-import { Wrapper as PopperWrapper } from "../../../Popper";
+import { Wrapper as PopperWrapper } from "../../../component/Popper";
 import styles from "./searchInpStyle.module.scss"
-import { useDebounce } from "../../../../hooks";
-import *as  searchService from "../../../../apiService/searchService";
+import Account from "../../../component/Account";
+import { useDebounce } from "../../../hooks";
+import * as searchService from "../../../services/searchService";
+import config from '../../../config';
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles)
 
@@ -16,7 +18,6 @@ function SearchInp() {
     const [showResult, setShowResult] = useState<boolean>(true);
 
     const debounce = useDebounce(searchValue, 600);
-
 
     useEffect(() => {
         //encodeURIComponent convert ký tự đặc biệt: = ? & trên API
@@ -80,7 +81,9 @@ function SearchInp() {
                         placeholder="Search" spellCheck={false}
                         onFocus={() => setShowResult(true)} />
                     {!!searchValue && <button className={cx("search-clear", "material-icons-outlined")} onClick={handleClear}>clear</button>}
-                    <button className={cx("search-bnt", "material-icons-outlined")} onMouseDown={(e) => e.preventDefault()}>search</button>
+                    <Link to={config.router.search} className={cx("xx")}>
+                        <button className={cx("search-bnt", "material-icons-outlined")} onMouseDown={(e) => e.preventDefault()}>search</button>
+                    </Link>
                 </div>
             </HeadlessTippy>
         </div>

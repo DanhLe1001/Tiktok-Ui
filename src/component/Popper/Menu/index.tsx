@@ -4,10 +4,10 @@ import classNames from 'classnames/bind';
 
 import { Wrapper as PopperWrapper } from '../../Popper';
 import styles from "./menu.module.scss"
-import { IMenuItem } from '../../Layout/component/Header';
 import MenuItem from './MenuItem';
 import HeaderMenu from './HeaderMenu';
 import { useState } from 'react';
+import { IMenuItem } from '../../../layouts/component/Header';
 
 const cx = classNames.bind(styles)
 
