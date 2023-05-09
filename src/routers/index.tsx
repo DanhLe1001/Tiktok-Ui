@@ -16,7 +16,7 @@ interface IPublicRouter {
 const publicRouter: IPublicRouter[] = [
     { path: "/", component: Home },
     { path: "/following", component: Following },
-    { path: "/information", component: Information },
+    { path: "/profile/:nickname", component: Information },
     { path: "/upload", component: Upload, layout: HeaderOnly },
     { path: "/search", component: Search, layout: null },
 ]
