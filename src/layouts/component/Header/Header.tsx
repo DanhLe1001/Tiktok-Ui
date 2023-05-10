@@ -39,7 +39,7 @@ function Header() {
     }
 
     //handle login
-    const currentUser = true;
+    const currentUser = false;
 
 
     const MENU_ITEM: IMenuItem[] = [{
@@ -169,7 +169,7 @@ function Header() {
                 <SearchInp />
 
                 <div className={cx("action")}>
-                    <Button text >+ Upload</Button>
+                    <Link to={config.router.upload}><Button text >+ Upload</Button></Link>
                     {currentUser ?
                         (
                             <>
