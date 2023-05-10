@@ -1,7 +1,6 @@
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
-
 import { Wrapper as PopperWrapper } from '..';
 import styles from "./menu.module.scss"
 import MenuItem from './MenuItem';
@@ -16,7 +15,6 @@ interface IMenu {
     items: IMenuItem[];
     onChange?: any;
 }
-
 
 function Menu({ children, items, onChange }: IMenu) {
     const [history, setHistory] = useState([{ data: items }])

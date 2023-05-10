@@ -12,17 +12,17 @@ import Live from "../page/Live/Live";
 
 interface IPublicRouter {
     path: string;
-    component: React.ComponentType<any>;
-    layout?: React.ComponentType<any> | null;
+    component: JSX.Element;
+    type?: 'single' | 'dashboard';
 }
 
 const publicRouter: IPublicRouter[] = [
-    { path: config.router.home, component: Home },
-    { path: config.router.following, component: Following },
-    { path: config.router.live, component: Live },
-    { path: `${config.router.profile}/:nickname`, component: Information },
-    { path: config.router.upload, component: Upload, layout: HeaderOnly },
-    { path: config.router.search, component: Search, layout: null },
+    { path: config.router.home, component: <Home /> },
+    { path: config.router.following, component: <Following /> },
+    { path: config.router.live, component: <Live /> },
+    { path: `${config.router.profile}/:nickname`, component: <Information /> },
+    { path: config.router.upload, component: <Upload /> },
+    { path: config.router.search, component: < Search /> },
 ]
 const privativeRouter = [{}];
 

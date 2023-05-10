@@ -4,7 +4,6 @@ import Menu, { MenuItem } from './Menu';
 import config from '../../../config';
 import { IMenuItemSidebar } from './Menu/MenuItem';
 import SuggestedAccounts from '../../../component/SuggestedAccounts/SuggestedAccounts';
-import * as searchService from '../../../services/searchService';
 
 const cx = classNames.bind(styles);
 
@@ -12,7 +11,8 @@ const MenuItemValue: IMenuItemSidebar[] = [{
     title: "For you",
     to: config.router.home,
     icon: <span className={cx("material-icons-outlined")}>home</span>,
-}, {
+},
+{
     title: "Following",
     to: config.router.following,
     icon: <span className={cx("material-icons-outlined")}>group</span>,
@@ -26,8 +26,7 @@ const MenuItemValue: IMenuItemSidebar[] = [{
 let labelSuggest = "Suggested accounts";
 let labelFollowing = "Following accounts";
 
-
-const res: any = fetch("https://tiktok.fullstack.edu.vn/api/users/search?q=hoaa&type=less")
+const res = fetch("https://tiktok.fullstack.edu.vn/api/users/search?q=hoaa&type=less")
     .then(response => JSON.stringify(response))
     .then(res => res)
 

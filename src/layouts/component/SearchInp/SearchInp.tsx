@@ -9,11 +9,12 @@ import { Account } from "../../../component/Account";
 import { useDebounce } from "../../../hooks";
 import * as searchService from "../../../services/searchService";
 import config from '../../../config';
+import { IUserData } from "../../../component/Account/Account";
 
 const cx = classNames.bind(styles)
 
 function SearchInp() {
-    const [searchResult, setSearchResult] = useState([]);
+    const [searchResult, setSearchResult] = useState<IUserData[]>([]);
     const [searchValue, setSearchValue] = useState<string>("");
     const [showResult, setShowResult] = useState<boolean>(false);
 
@@ -27,7 +28,7 @@ function SearchInp() {
             return;
         }
         const fetchAPI = async () => {
-            const res: any = await searchService.searchService(debounceValue);
+            const res = await searchService.searchService(debounceValue);
             setSearchResult(res.data);
         }
         fetchAPI();
@@ -64,8 +65,7 @@ function SearchInp() {
                         <PopperWrapper>
                             <h4 className={cx("search-title")}>Account</h4>
                             <div className={cx("search-result-scroll")}>
-                                {searchResult.map((res: any) =>
-
+                                {searchResult.map((res) =>
                                     <Account key={res.id} data={res} />)}
                             </div>
                         </PopperWrapper>

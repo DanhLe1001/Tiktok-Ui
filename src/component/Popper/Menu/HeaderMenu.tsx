@@ -5,7 +5,7 @@ const cx = classNames.bind(styles)
 
 interface IHeaderMenu {
     title: string;
-    onBack: any;
+    onBack: () => void;
 }
 function HeaderMenu({ title, onBack }: IHeaderMenu) {
     return (

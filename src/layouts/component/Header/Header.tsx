@@ -19,7 +19,7 @@ export interface ILanguage {
 
 export interface IChildrenLanguage {
     title: string;
-    data?: ILanguage[];
+    data: ILanguage[];
 }
 
 export interface IMenuItem {
@@ -34,8 +34,8 @@ function Header() {
 
 
     //handle logic here
-    const handleMenuChange = (change: any) => {
-        console.log(change);
+    const handleMenuChange = () => {
+
     }
 
     //handle login
