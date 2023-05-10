@@ -15,24 +15,24 @@ const cx = classNames.bind(styles)
 function SearchInp() {
     const [searchResult, setSearchResult] = useState([]);
     const [searchValue, setSearchValue] = useState<string>("");
-    const [showResult, setShowResult] = useState<boolean>(true);
+    const [showResult, setShowResult] = useState<boolean>(false);
 
-    const debounce = useDebounce(searchValue, 600);
+    const debounceValue = useDebounce(searchValue, 600);
 
     useEffect(() => {
         //encodeURIComponent convert ký tự đặc biệt: = ? & trên API
         //trim() Used to remove all leading and trailing spaces.
-        if (!debounce.trim()) {
+        if (!debounceValue.trim()) {
             setSearchResult([]);
             return;
         }
         const fetchAPI = async () => {
-            const res: any = await searchService.searchService(debounce);
+            const res: any = await searchService.searchService(debounceValue);
             setSearchResult(res.data);
         }
         fetchAPI();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [debounce])
+    }, [debounceValue])
 
     const inputRef = useRef<HTMLInputElement>(null);
     const handleClear = () => {

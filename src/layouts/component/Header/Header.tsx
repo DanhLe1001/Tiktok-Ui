@@ -185,7 +185,7 @@ function Header() {
                         )
                         : (
                             <>
-                                <Button primary >Log in</Button>
+                                <Button primary to={config.router.home} >Log in</Button>
                             </>
                         )}
                     <Menu items={currentUser ? USER_MENU : MENU_ITEM} onChange={handleMenuChange}>

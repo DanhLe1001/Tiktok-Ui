@@ -36,26 +36,27 @@ function Menu({ children, items, onChange }: IMenu) {
             }} />
         })
     }
+    const renderResult = (att: any) => (
+        <div className={cx("menu-list")} tabIndex={-1} {...att}>
+            <PopperWrapper>
+                {history.length > 1 && <HeaderMenu title={current.title} onBack={() => (
+                    setHistory(prev => prev.slice(0, prev.length - 1))
+                )}></HeaderMenu>}
+                <div className={cx("menu-scrollable")}>{renderItems()}</div>
+            </PopperWrapper>
+        </div>
+    )
 
     return (
         <Tippy
-            //onHide set value again after it hide
+            //onHide set value again after it hide (return to first page) reset menu
             onHide={() => setHistory((prev => prev.slice(0, 1)))}
             delay={[0, 500]}
             offset={[12, 8]}
             hideOnClick={false}
             interactive
             placement="bottom-end"
-            render={(att) => (
-                <div className={cx("menu-list")} tabIndex={-1} {...att}>
-                    <PopperWrapper>
-                        {history.length > 1 && <HeaderMenu title={current.title} onBack={() => (
-                            setHistory(prev => prev.slice(0, prev.length - 1))
-                        )}></HeaderMenu>}
-                        <div className={cx("menu-scrollable")}>{renderItems()}</div>
-                    </PopperWrapper>
-                </div>
-            )}
+            render={renderResult}
         >
             {children}
         </Tippy>);
