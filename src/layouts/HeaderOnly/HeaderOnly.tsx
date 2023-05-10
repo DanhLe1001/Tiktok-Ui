@@ -4,13 +4,13 @@ interface HeaderOnlyProps {
     children: ReactNode;
 }
 
-function HeaderOnly({ children }: HeaderOnlyProps) {
+function HeaderOnly() {
     return (
         <div>
             <Header />
             <div className="container">
                 <div className="content">
-                    {children}
+                    {/* {children} */}
                 </div>
             </div>
         </div>

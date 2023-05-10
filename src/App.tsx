@@ -1,7 +1,8 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { publicRouter } from './routers/routers';
-import { DefaultLayout } from './layouts';
-import Live from './page/Live/Live';
+import { DefaultLayout, HeaderOnly } from './layouts';
+import Search from './page/Search/Search';
+import Upload from './page/Upload/Upload';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
               />
             ))}
           </Route>
-          <Route path="/live" element={<Live />}></Route>
+          <Route path="/search" element={<Search />}></Route>
+          <Route path="/upload" element={<><HeaderOnly /> <Upload /></>}></Route>
         </Routes>
       </div>
     </BrowserRouter>
