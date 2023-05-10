@@ -4,6 +4,7 @@ const router = {
     profile: "/profile",
     upload: "/upload",
     search: "/search",
+    live: "/live"
 
 }
 export default router;

@@ -39,7 +39,7 @@ function Header() {
     }
 
     //handle login
-    const currentUser = false;
+    const currentUser = true;
 
 
     const MENU_ITEM: IMenuItem[] = [{
