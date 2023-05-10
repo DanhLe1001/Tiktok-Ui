@@ -18,9 +18,9 @@ interface IButton {
     lager?: boolean;
     disable?: boolean;
     className?: any;
-    leftIcon?: any;
-    rightIcon?: any;
-    onClick?: any;
+    leftIcon?: JSX.Element;
+    rightIcon?: JSX.Element;
+    onClick?: () => void;
 }
 
 function Button({ children, to, href, primary, rounded, outline, text, onClick, target, small, lager, className, leftIcon, rightIcon, disable }: IButton) {

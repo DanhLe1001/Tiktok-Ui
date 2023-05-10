@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import classNames from "classnames/bind";
 import HeadlessTippy from '@tippyjs/react/headless';
+import { Link } from "react-router-dom";
 
 import { Wrapper as PopperWrapper } from "../../../component/Popper";
 import styles from "./searchInpStyle.module.scss"
@@ -8,7 +9,6 @@ import { Account } from "../../../component/Account";
 import { useDebounce } from "../../../hooks";
 import * as searchService from "../../../services/searchService";
 import config from '../../../config';
-import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles)
 

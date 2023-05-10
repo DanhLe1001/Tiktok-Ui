@@ -1,7 +1,10 @@
 
+import { ReactNode } from "react";
 import "./globalStyle.scss"
-function GlobalStyle({ children }: any) {
-
-    return children;
+interface Prop {
+    children: ReactNode;
+}
+function GlobalStyle({ children }: Prop): JSX.Element {
+    return <>{children}</>;
 }
 export default GlobalStyle;

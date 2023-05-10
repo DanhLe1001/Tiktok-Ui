@@ -2,14 +2,19 @@ import { Fragment } from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { publicRouter } from './routers/routers';
 import { DefaultLayout } from './layouts';
+
+// interface ILayout {
+//   Layout:
+// }
+
 function App() {
   return (
-
     <BrowserRouter>
       <div className="App">
         <Routes>
           {publicRouter.map((router, index) => {
             let Layout: any = DefaultLayout;
+
             if (router.layout) {
               Layout = router.layout;
             }

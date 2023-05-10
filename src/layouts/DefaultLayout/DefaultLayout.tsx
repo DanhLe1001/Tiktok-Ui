@@ -2,10 +2,15 @@ import classNames from 'classnames/bind';
 import Header from "../component/Header/Header";
 import { Sidebar } from "../component/Sidebar";
 import styles from "./defaultLayoutStyle.module.scss"
+import { ReactNode } from 'react';
 
 const cx = classNames.bind(styles)
 
-function DefaultLayout({ children }: any) {
+interface IDefaultLayoutProps {
+    children: ReactNode;
+}
+
+function DefaultLayout({ children }: IDefaultLayoutProps): JSX.Element {
     return (
         <div className={cx('warper')}>
             <Header />
