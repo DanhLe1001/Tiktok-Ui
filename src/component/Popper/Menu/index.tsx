@@ -20,11 +20,11 @@ interface IMenu {
 
 function Menu({ children, items, onChange }: IMenu) {
     const [history, setHistory] = useState([{ data: items }])
-    const current = history[history.length - 1];
+    const current: any = history[history.length - 1];
 
     const renderItems = () => {
 
-        return current.data.map((i: any, index) => {
+        return current.data.map((i: any, index: any) => {
             const isParent = !!i.children;
             return <MenuItem key={index} data={i} onClick={() => {
                 if (isParent) {
@@ -49,7 +49,7 @@ function Menu({ children, items, onChange }: IMenu) {
             render={(att) => (
                 <div className={cx("menu-list")} tabIndex={-1} {...att}>
                     <PopperWrapper>
-                        {history.length > 1 && <HeaderMenu title='Language' onBack={() => (
+                        {history.length > 1 && <HeaderMenu title={current.title} onBack={() => (
                             setHistory(prev => prev.slice(0, prev.length - 1))
                         )}></HeaderMenu>}
                         <div className={cx("menu-scrollable")}>{renderItems()}</div>
