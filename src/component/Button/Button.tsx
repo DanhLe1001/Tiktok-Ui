@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 const cx = classNames.bind(styles);
 
 interface IButton {
-    children: ReactNode;
+    children?: ReactNode;
     to?: string;
     href?: string;
     primary?: boolean;
@@ -26,6 +26,7 @@ interface IButton {
 function Button({ children, to, href, primary, rounded, outline, text, onClick, target, small, lager, className, leftIcon, rightIcon, disable }: IButton) {
 
     let Comp: "button" | typeof Link | "a" = "button";
+
     const props: any = {
         onClick,
     }
