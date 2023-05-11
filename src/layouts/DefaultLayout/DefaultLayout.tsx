@@ -12,7 +12,10 @@ function DefaultLayout(): JSX.Element {
             <Header />
             <div className={cx('container')}>
                 <Sidebar />
-                <Outlet />
+                <div className={cx("content")}>
+                    <Outlet />
+                </div>
+
             </div>
         </div>
     );

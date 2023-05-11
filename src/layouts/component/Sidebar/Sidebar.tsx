@@ -26,14 +26,6 @@ const MenuItemValue: IMenuItemSidebar[] = [{
 let labelSuggest = "Suggested accounts";
 let labelFollowing = "Following accounts";
 
-const res = fetch("https://tiktok.fullstack.edu.vn/api/users/search?q=hoaa&type=less")
-    .then(response => JSON.stringify(response))
-    .then(res => res)
-
-console.log(res);
-
-
-
 function Sidebar() {
     return (
         <aside className={cx("sidebar-warper")}>
