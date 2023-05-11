@@ -37,8 +37,6 @@ function Menu({ children, items }: IMenu) {
             <PopperWrapper>
                 {history.length > 1 && <HeaderMenu title={current.title!} onBack={() => {
                     const resetValueMenu = history.slice(0, history.length - 1);
-                    console.log(resetValueMenu);
-
                     setHistory(resetValueMenu);
                 }
                 }></HeaderMenu>}
