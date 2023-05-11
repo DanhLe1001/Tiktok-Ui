@@ -19,24 +19,18 @@ export interface ILanguage {
 
 export interface IChildrenLanguage {
     title: string;
-    data?: ILanguage[];
+    data: ILanguage[];
 }
 
 export interface IMenuItem {
-    icon: JSX.Element;
-    title: string;
-    to?: string;
+    icon?: JSX.Element | undefined;
+    title?: string;
+    to?: string | undefined;
     separate?: boolean;
     children?: IChildrenLanguage;
 }
 
 function Header() {
-
-
-    //handle logic here
-    const handleMenuChange = (change: any) => {
-        console.log(change);
-    }
 
     //handle login
     const currentUser = true;
@@ -57,64 +51,64 @@ function Header() {
                     title: "Viet Nam",
                 },
                 {
-                    code: "en",
-                    title: "English",
+                    code: "en1",
+                    title: "English1",
                 },
                 {
-                    code: "vn",
-                    title: "Viet Nam",
+                    code: "vn1",
+                    title: "Viet Nam1",
                 },
                 {
-                    code: "en",
-                    title: "English",
+                    code: "en2",
+                    title: "English2",
                 },
                 {
-                    code: "vn",
-                    title: "Viet Nam",
+                    code: "vn2",
+                    title: "Viet Nam2",
                 },
                 {
-                    code: "en",
-                    title: "English",
+                    code: "en3",
+                    title: "English3",
                 },
                 {
-                    code: "vn",
-                    title: "Viet Nam",
+                    code: "vn3",
+                    title: "Viet Nam3",
                 },
                 {
-                    code: "en",
-                    title: "English",
+                    code: "en4",
+                    title: "English4",
                 },
                 {
-                    code: "vn",
-                    title: "Viet Nam",
+                    code: "vn4",
+                    title: "Viet Nam4",
                 },
                 {
-                    code: "en",
-                    title: "English",
+                    code: "en5",
+                    title: "English5",
                 },
                 {
-                    code: "vn",
-                    title: "Viet Nam",
+                    code: "vn5",
+                    title: "Viet Nam5",
                 },
                 {
-                    code: "vn",
-                    title: "Viet Nam",
+                    code: "vn6",
+                    title: "Viet Nam6",
                 },
                 {
-                    code: "en",
-                    title: "English",
+                    code: "en6",
+                    title: "English6",
                 },
                 {
-                    code: "vn",
-                    title: "Viet Nam",
+                    code: "vn7",
+                    title: "Viet Nam7",
                 },
                 {
-                    code: "en",
-                    title: "English",
+                    code: "en7",
+                    title: "English7",
                 },
                 {
-                    code: "vn",
-                    title: "Viet Nam",
+                    code: "vn8",
+                    title: "Viet Nam8",
                 },
             ]
         }
@@ -188,7 +182,7 @@ function Header() {
                                 <Button primary to={config.router.home} >Log in</Button>
                             </>
                         )}
-                    <Menu items={currentUser ? USER_MENU : MENU_ITEM} onChange={handleMenuChange}>
+                    <Menu items={currentUser ? USER_MENU : MENU_ITEM} >
                         {currentUser ? (
                             <img className={cx("user-avatar")} src="https://images.unsplash.com/photo-1683115763606-43dd57a47712?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="User avatar" />
                         ) : (

@@ -1,0 +1,123 @@
+.suggest-label {
+    padding: 0 8px;
+    padding-top: 20px;
+    margin: 10px 0 8px 2px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    // margin-left: 8px;
+    color: rgba(22, 24, 35, 0.7);
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 340px;
+        top: 0;
+        left: 0;
+        border: 1px solid rgba(0, 0, 0, 0.151);
+        z-index: -1;
+        margin-left: 7px;
+    }
+}
+
+.suggest-seeAll {
+    color: rgba(254, 44, 85, 1);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+//suggestedAccount Item
+.wrapper {
+    display: flex;
+    padding: 9px 10px;
+    cursor: pointer;
+    align-items: center;
+    width: inherit;
+    // overflow-y: auto;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.059);
+    }
+}
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-right: 8px;
+}
+.name {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+}
+.userName {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: rgba(22, 24, 35, 0.5);
+}
+.check {
+    margin-left: 6px;
+    color: rgb(32, 213, 236);
+    font-size: 18px;
+}
+
+// render tippy
+
+.account-show {
+    width: 320px;
+    &-top {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 20px;
+        object-fit: cover;
+        margin-right: 8px;
+    }
+    &-name {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    &-userName {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    &-bottom {
+        line-height: 0px;
+        &-number {
+            font-weight: 700;
+            margin-right: 6px;
+            font-size: 17px;
+            line-height: 20px;
+            margin-right: 5px;
+        }
+        &-title {
+            color: rgba(22, 24, 35, 0.75);
+            font-size: 17px;
+            line-height: 20px;
+            margin-right: 15px;
+        }
+    }
+}
+.account-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+}

@@ -7,7 +7,7 @@ const cx = classNames.bind(styles)
 
 interface IData {
     data: IMenuItem
-    onClick?: any
+    onClick?: () => void
 }
 
 function MenuItem({ data, onClick }: IData) {

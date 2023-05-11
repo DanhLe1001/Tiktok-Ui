@@ -1,7 +1,6 @@
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
-
 import { Wrapper as PopperWrapper } from '..';
 import styles from "./menu.module.scss"
 import MenuItem from './MenuItem';
@@ -12,36 +11,37 @@ import { IMenuItem } from '../../../layouts/component/Header/Header';
 const cx = classNames.bind(styles)
 
 interface IMenu {
-    children: any;
+    children: JSX.Element;
     items: IMenuItem[];
-    onChange?: any;
 }
 
+function Menu({ children, items }: IMenu) {
+    const [history, setHistory] = useState<{ data: IMenuItem[], title?: string }[]>([{ data: items }])
 
-function Menu({ children, items, onChange }: IMenu) {
-    const [history, setHistory] = useState([{ data: items }])
-    const current: any = history[history.length - 1];
+    const current = history[history.length - 1];
 
     const renderItems = () => {
 
-        return current.data.map((i: any, index: any) => {
+        return current.data?.map((i: IMenuItem) => {
             const isParent = !!i.children;
-            return <MenuItem key={index} data={i} onClick={() => {
+            return <MenuItem key={i.title} data={i} onClick={() => {
                 if (isParent) {
-                    setHistory(prev => [...prev, i.children])
-                }
-                else {
-                    onChange(i)
+                    setHistory(prev => [...prev, i.children!])
                 }
             }} />
         })
     }
-    const renderResult = (att: any) => (
+
+    const renderResult = (att: object) => (
         <div className={cx("menu-list")} tabIndex={-1} {...att}>
             <PopperWrapper>
-                {history.length > 1 && <HeaderMenu title={current.title} onBack={() => (
-                    setHistory(prev => prev.slice(0, prev.length - 1))
-                )}></HeaderMenu>}
+                {history.length > 1 && <HeaderMenu title={current.title!} onBack={() => {
+                    const resetValueMenu = history.slice(0, history.length - 1);
+                    console.log(resetValueMenu);
+
+                    setHistory(resetValueMenu);
+                }
+                }></HeaderMenu>}
                 <div className={cx("menu-scrollable")}>{renderItems()}</div>
             </PopperWrapper>
         </div>

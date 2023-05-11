@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 const cx = classNames.bind(styles);
 
 interface IButton {
-    children: ReactNode;
+    children?: ReactNode;
     to?: string;
     href?: string;
     primary?: boolean;
@@ -17,15 +17,16 @@ interface IButton {
     small?: boolean;
     lager?: boolean;
     disable?: boolean;
-    className?: any;
-    leftIcon?: any;
-    rightIcon?: any;
-    onClick?: any;
+    className?: string;
+    leftIcon?: JSX.Element;
+    rightIcon?: JSX.Element;
+    onClick?: () => void | undefined;
 }
 
 function Button({ children, to, href, primary, rounded, outline, text, onClick, target, small, lager, className, leftIcon, rightIcon, disable }: IButton) {
 
-    let Comp: any = "button";
+    let Comp: "button" | typeof Link | "a" = "button";
+
     const props: any = {
         onClick,
     }
@@ -49,7 +50,7 @@ function Button({ children, to, href, primary, rounded, outline, text, onClick, 
     // }
 
     const classes = cx("wrapper", {
-        [className]: className, primary, outline, rounded, text, small, lager, leftIcon, rightIcon
+        [className!]: className, primary, outline, rounded, text, small, lager, leftIcon, rightIcon
     });
     return (
         <Comp className={classes}  {...props} target={target} >
